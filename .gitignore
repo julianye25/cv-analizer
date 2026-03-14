@@ -1,0 +1,18 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Environment variables — NUNCA al repo
+.env
+
+# Uploads temporales
+uploads/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
