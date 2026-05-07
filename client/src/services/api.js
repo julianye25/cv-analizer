@@ -4,7 +4,8 @@ const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
 const API_URL = `${BASE_URL}/api/analyze`;
 
 
-console.log('API URL:', import.meta.env.VITE_API_URL);
+console.log('BASE_URL:', BASE_URL);      // ← aquí
+console.log('API_URL:', API_URL);        // ← y aquí
 
 export async function analyzeCV(file, email = '') {
   const formData = new FormData();
