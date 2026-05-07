@@ -6,6 +6,9 @@
 
 Analiza tu hoja de vida con Inteligencia Artificial. Sube tu CV (PDF/DOCX) y recibe un análisis completo con recomendaciones.
 
+## Demo
+🔗 [Ver aplicación](https://cv-analizer-8iurrlcnf-julian-andres-yepes-gomezs-projects.vercel.app/)
+
 ## Screenshot  ← aquí
 
 ![CV Analyzer Demo](./docs/screenshot.png)
