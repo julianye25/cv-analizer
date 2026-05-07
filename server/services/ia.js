@@ -1,10 +1,10 @@
 import OpenAI from "openai";
 
-const groq = new OpenAI({
-  apiKey: process.env.GROQ_API_KEY,
-});
-
 export async function analyzeCV(cvText) {
+  const groq = new OpenAI({
+    apiKey: process.env.GROQ_API_KEY,
+    baseURL: "https://api.groq.com/openai/v1",
+  });
   const prompt = `
 Eres un experto en recursos humanos con más de 15 años de experiencia evaluando candidatos para empresas de tecnología, banca y empresas multinacionales.
 
