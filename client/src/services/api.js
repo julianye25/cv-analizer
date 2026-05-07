@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = import.meta.env.VITE_API_URL || "https://cv-analizer.onrender.com";
+const BASE_URL ="https://cv-analizer.onrender.com";
 const API_URL = `${BASE_URL}/api/analyze`;
 
 export async function analyzeCV(file, email = "") {
