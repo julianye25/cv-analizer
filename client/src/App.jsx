@@ -1,9 +1,7 @@
 import { useState } from "react";
-import axios from "axios";
 import FileUpload from "./components/FileUpload";
 import ResultCard from "./components/ResultCard";
-
-const API_URL = import.meta.env.PROD ? "/api/analyze" : "/api/analyze";
+import { analyzeCV } from "./services/api";
 
 export default function App() {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -22,16 +20,9 @@ export default function App() {
     setError("");
 
     try {
-      const formData = new FormData();
-      formData.append("cv", selectedFile);
-
-      const response = await axios.post(API_URL, formData, {
-        headers: { "Content-Type": "multipart/form-data" },
-        timeout: 120000,
-      });
-
-      setAnalysis(response.data.analysis);
-      setFilename(response.data.filename);
+      const response = await analyzeCV(selectedFile);
+      setAnalysis(response.analysis);
+      setFilename(response.filename);
     } catch (err) {
       const msg =
         err.response?.data?.error || err.message || "Error al analizar";
