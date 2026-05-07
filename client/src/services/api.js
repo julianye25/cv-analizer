@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const API_URL = '/api/analyze';
+const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+const API_URL = `${BASE_URL}/api/analyze`;
 
 export async function analyzeCV(file, email = '') {
   const formData = new FormData();
@@ -16,4 +17,4 @@ export async function analyzeCV(file, email = '') {
   });
 
   return response.data;
-}
+} 
